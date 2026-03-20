@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "index.html#retail-manager-pr",
+    "href": "index.html#retail-manager-pr",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Retail Manager PR",
+    "text": "Retail Manager PR\nSupport Copilot scope review\nAgreement boundary, delivered MVP, and scope expansion evidence\nFocus of this presentation\n\nsigned scope\ndelivered MVP\nverified production footprint\nresolution path\n\n\nOpen Spatial View"
+  },
+  {
+    "objectID": "index.html#executive-summary",
+    "href": "index.html#executive-summary",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Executive Summary",
+    "text": "Executive Summary\nBottom line\n\nThe signed Phase 1 agreement covered improvement of the existing GPT workflow.\nIt did not cover a new external retrieval platform.\nA working MVP was nevertheless built and delivered by January 22, 2026.\nThat deliverable later expanded into a Telegram-enabled support runtime with public validation.\nThat MVP ran on a production knowledge layer of 295,816 verified records.\n\nConclusion\nThe delivered MVP, including the later Telegram runtime, is additional implementation scope beyond the signed Phase 1 agreement."
+  },
+  {
+    "objectID": "index.html#signed-agreement",
+    "href": "index.html#signed-agreement",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Signed Agreement",
+    "text": "Signed Agreement\nPhase 1 baseline\n\nProposal: Retail Manager 2025-012-A0\nSigned by: Elbert Chavarro\nBilling: hourly at $11.50/hour\nFacturing cadence: weekly or biweekly by agreement\nPayment term: due within 14 days of invoice\n\nIncluded in Phase 1\n\nEvaluate and diagnose the current Excel document and GPT prompt\nImprove the existing GPT-supporting materials\nValidate improved GPT behavior\nDocument findings, implemented fixes, and recommendations\n\nExcluded from Phase 1\n\nAdvanced systems such as RAG\nExternal platforms beyond the current system\nLater technical phases that might be recommended after reevaluation\n\nAll of the above comes directly from the signed proposal."
+  },
+  {
+    "objectID": "index.html#what-changed",
+    "href": "index.html#what-changed",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "What Changed",
+    "text": "What Changed\nStarting point\n\nKickoff notes focus on the current GPT, Excel source file, CRM reference access, and internal Q/A needs.\nEarly notes do not describe a separate deployed retrieval platform.\nThe signed proposal also frames future advanced tooling as a later phase after reevaluation.\n\nActual delivered direction\n\nWork evolved from improving an existing GPT workflow into building a working MVP support copilot.\nThe later MVP included a custom API, Supabase-backed retrieval, data sync, and a bounded multi-source search flow.\nThe deliverable later expanded again to include Telegram bot support and public webhook validation.\nThe deployed knowledge layer was populated with 4,732 closed cases, 23,152 helpdesk tickets, 267,822 helpdesk comments, 106 document chunks, and request logging.\nThis is not just prompt tuning or spreadsheet cleanup; it is implementation of a new technical system.\n\nScope conclusion\nThe evidence supports a clear change from “improve the current internal GPT setup” to “deliver a working AI support MVP on new infrastructure, later expanded into a multi-channel runtime backed by 295,816+ records.”"
+  },
+  {
+    "objectID": "index.html#contract-analysis",
+    "href": "index.html#contract-analysis",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Contract Analysis",
+    "text": "Contract Analysis\nContract boundary\n\nPhase 1 is hourly professional services around the current GPT system.\nThe contract allows reevaluation after the initial phase to define future phases.\nAdvanced systems like RAG or other external platforms are expressly outside the signed Phase 1 scope.\n\nWhy the MVP falls outside it\n\nThe MVP used new infrastructure and new implementation layers.\nThe later technical readout describes a deployed architecture beyond the contract’s stated exclusions.\nThe contract itself anticipates that this type of work should be priced or defined in a later phase.\nThe measured production dataset confirms that this was not a small prompt-adjustment exercise but a large-scale retrieval system build.\n\nConservative reading\nEven under a narrow reading, the signed proposal does not include delivery of a new multi-component MVP platform with custom API, Supabase retrieval, VTiger sync, and a 295,816-record knowledge layer inside the original Phase 1 scope."
+  },
+  {
+    "objectID": "index.html#compensation-position",
+    "href": "index.html#compensation-position",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Compensation Position",
+    "text": "Compensation Position\nPhase 1 price basis\n\nPhase 1 was hourly work at $11.50/hour\nPhase 1 covered analysis, improvement, validation, and documentation for the current GPT workflow\nPhase 1 explicitly excluded advanced external systems and future-phase implementations\n\nQuantified scope delta\n\nDelivered implementation included a Custom GPT, Telegram bot support, custom API, Supabase retrieval, VTiger sync, deployment/runtime work, and request logging\nProduction knowledge base verified at 295,816 records across seven public tables\nData footprint exceeded the original 4,732-case corpus by roughly 62.5x\n\nFinal position\nThe delivered MVP is not reasonably classifiable as routine execution within the signed Phase 1 scope. It is additional implementation work and should be recognized, valued, and compensated as a separate scope expansion or later-phase deliverable."
+  },
+  {
+    "objectID": "index.html#work-performed",
+    "href": "index.html#work-performed",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Work Performed",
+    "text": "Work Performed\nDiscovery and preparation\n\nReviewed client materials, kickoff inputs, and CRM context\nBuilt VTiger extraction/sync tooling\nProfiled 4,732 closed cases and identified key data-quality gaps\nPrepared technical discovery, normalization, and roadmap deliverables\n\nMVP implementation\n\nChatGPT Custom GPT instructions and action schema\nTelegram bot integration and topic-thread reply flow\nCustom Node.js / Express API\nSupabase PostgreSQL search layer\nImport scripts for cases, comments, helpdesk, and PDF docs\nDocker + Nginx runtime packaging\nPublic validation for both Custom GPT and Telegram delivery paths\nRead-only retrieval workflow with citations and fallback behavior\n\nProduction data footprint\n\n4,732 rows in cases_closed\n23,152 rows in helpdesk_closed\n267,822 rows in helpdesk_comments\n106 rows in docs_chunks\nrequest logging in doc_requests\n\nScale\n\nTotal indexed records verified: 295,816\nRelative to the original 4,732 closed-case corpus alone, the deployed knowledge layer is about 62.5x larger\nThe single largest source is employee/support comment history, not the original case table"
+  },
+  {
+    "objectID": "index.html#deliverables",
+    "href": "index.html#deliverables",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Deliverables",
+    "text": "Deliverables\nOn record\n\nSigned proposal and kickoff notes\nUpstream analysis repository with client materials and data work\nJanuary 22, 2026 owner MVP readout package\nTechnical discovery report\nData normalization plan\nAI enablement roadmap\nMVP implementation repository\n\nMVP stack\n\nChatGPT Custom GPT\nTelegram support bot\nExpress.js API server\nSupabase PostgreSQL with search and Q&A retrieval\nDocker + Nginx deployment runtime\nVTiger sync pipeline\n\nProduction schema\n\ncases_closed: closed case corpus\nhelpdesk_closed: support ticket corpus\nhelpdesk_comments: technician/employee comment corpus\ndocs and docs_chunks: ingested troubleshooting guide\ndoc_requests: missing-documentation feedback loop\n\nThis is an implemented product artifact, not just advisory work, and it spans more than one client-facing interaction channel. This is an implemented product artifact, not just advisory work."
+  },
+  {
+    "objectID": "index.html#evidence-timeline",
+    "href": "index.html#evidence-timeline",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Evidence Timeline",
+    "text": "Evidence Timeline\nChronology\n\n2025-12-17: kickoff notes describe current GPT, Excel input, CRM access, and central Q/A goal\nDecember 2025: signed proposal defines Phase 1 as improvement of the current system\n2026-01-17: MVP repo created on GitHub\n2026-01-20: MVP repo already contains active implementation commits\n2026-01-21 to 2026-01-22: Supabase project shows ingested documents and request logging in production\n2026-01-22: owner readout documents a functional MVP and next-phase options\n2026-03-20: live deliverable validation confirms Telegram topic delivery and public webhook runtime on the same knowledge base\n\nReading of the timeline\nThe timeline is consistent with a rapid expansion from analysis work into a delivered MVP, followed by further implementation into a validated Telegram-enabled runtime."
+  },
+  {
+    "objectID": "index.html#context-behind-the-communication-breakdown",
+    "href": "index.html#context-behind-the-communication-breakdown",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Context Behind the Communication Breakdown",
+    "text": "Context Behind the Communication Breakdown\nSecurity concern\n\nDuring development, I became aware of prior database security incidents that were not formally documented in the project workflow.\nFrom my perspective, that raised concern because a system with prior breaches can expose both company and developer risk if infrastructure or credentials are mishandled.\nI became concerned that if the company were audited after a prior breach, the project and its credentials might be exposed to avoidable risk.\n\nResulting behavior\n\nI began applying additional security precautions beyond the MVP scope.\nBecause this was an MVP and not a fully secured production system, I became more cautious about how credentials and infrastructure access would be transferred after delivery.\nThat led me to prefer in-person handoff of credentials and access rather than digital transfer.\nI also became concerned that the MVP deliverable might be taken without corresponding recognition of the added implementation work, which increased my defensiveness around handoff.\n\nMy mistakes\n\nI allowed stress and uncertainty to escalate my reactions instead of pausing and reassessing.\nI misread some signals and assumed risks that were not necessarily present.\nI should have raised those concerns earlier and more clearly before they affected delivery.\nI was not honest enough about my emotional state or level of strain during meetings, which made my behavior harder to interpret.\n\nPresent position\n\nMy intent was to protect the project, the company’s data, and my professional responsibility.\nI recognize that the situation created unnecessary tension, and I take responsibility for my part in that.\nI am willing to resolve the engagement based on the work already completed, including accepting payment for only the final two weeks of work if that is the cleanest closeout."
+  },
+  {
+    "objectID": "index.html#what-i-realized-after-reassessing",
+    "href": "index.html#what-i-realized-after-reassessing",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "What I Realized After Reassessing",
+    "text": "What I Realized After Reassessing\nCore realization\n\nI placed too much of the security and risk analysis on myself instead of discussing it directly and early.\nI tried to solve the technical problem, the security problem, and the delivery problem at the same time.\n\nWhy that mattered\n\nThe client and leadership were consistently respectful and professional.\nBecause of that internal mismatch, I kept analyzing privately instead of clarifying openly.\nI treated uncertainty as a reason to tighten control instead of a reason to communicate.\n\nBetter approach\n\nraise concerns immediately\nkeep scope aligned to the requested MVP\nexpand only when additional scope is explicitly requested"
+  },
+  {
+    "objectID": "index.html#workload-and-stress-factors",
+    "href": "index.html#workload-and-stress-factors",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Workload and Stress Factors",
+    "text": "Workload and Stress Factors\nWhat was happening at the same time\n\nI was balancing this MVP with personal research, infrastructure hardening, and other development work.\nI was also under significant external stress, which reduced my ability to pause and reassess calmly.\n\nHow that showed up\n\nI over-engineered some precautions beyond what the project required.\nI continued pushing forward under pressure instead of slowing down and asking clarifying questions.\nI combined unrelated warning signals into a stronger risk assessment than the evidence justified.\n\nLesson\nFor client work, I need to separate external stress and personal R&D from the active engagement and keep my response proportional to verified facts."
+  },
+  {
+    "objectID": "index.html#scope-alignment-and-compensation-lessons",
+    "href": "index.html#scope-alignment-and-compensation-lessons",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Scope Alignment and Compensation Lessons",
+    "text": "Scope Alignment and Compensation Lessons\nOriginal scope\n\nThe engagement began as an hourly MVP-focused project.\nThe signed agreement centered on improving the current GPT workflow, validating it, and documenting recommendations.\n\nWhat expanded during development\n\nAdditional work emerged around deeper data analysis, structural planning, retrieval design, and broader implementation.\nSome advanced ideas and future-state improvements began overlapping with active MVP delivery work.\nThat expansion was not formally reaffirmed through a new phase definition or updated compensation structure at the time.\n\nLesson moving forward\nWhen work begins extending beyond the agreed MVP scope, the process should pause briefly to:\n\nclarify deliverables\ndefine the next phase\nalign compensation expectations\n\nThis keeps collaboration fair, sustainable, and clear for both sides."
+  },
+  {
+    "objectID": "index.html#lessons-im-applying-going-forward",
+    "href": "index.html#lessons-im-applying-going-forward",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Lessons I’m Applying Going Forward",
+    "text": "Lessons I’m Applying Going Forward\nCommunication\n\nIf I am overloaded or burnt out, I need to say so directly instead of masking it.\nIf scope, trust, or security feels unclear, I need to ask more questions sooner.\n\nDelivery\n\nPresent the full technical picture during development, not only at the end.\nDeliver the requested scope first, then propose expansions separately.\nAvoid taking silent responsibility for risks that have not been discussed and assigned.\nPause when scope expands and realign compensation before additional work becomes normalized.\n\nTakeaway\nClear communication, capacity transparency, and scope discipline are as important as technical execution."
+  },
+  {
+    "objectID": "index.html#personal-philosophy-self-engineering",
+    "href": "index.html#personal-philosophy-self-engineering",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Personal Philosophy: Self-Engineering",
+    "text": "Personal Philosophy: Self-Engineering\nCore idea\n\nI approach engineering and collaboration through a mindset of continuous self-observation and improvement.\nThe goal is not perfection, but learning, iteration, and better decisions over time.\n\nHow it applies to work\n\nreflect on decisions and outcomes\nidentify mistakes without denial\nimprove systems, workflows, and communication iteratively\n\nWhy it matters in collaboration\n\nThe same mindset used to improve technical systems should also improve professional behavior.\nReflection is only useful if it leads to clearer process, stronger boundaries, and better communication in future work."
+  },
+  {
+    "objectID": "index.html#balancing-analysis-and-perspective",
+    "href": "index.html#balancing-analysis-and-perspective",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Balancing Analysis and Perspective",
+    "text": "Balancing Analysis and Perspective\nAnalytical strength\n\nDuring the project I relied heavily on analytical reasoning and risk assessment.\nThat strength helped me identify technical and security concerns quickly.\n\nNeed for collaborative perspective\n\nI also learned that analysis can outpace perspective when it is carried alone for too long.\nOpen dialogue, trusted feedback, and clarification from others help keep decisions proportional.\n\nRole of tools and support systems\n\nOne reason I build structured systems is to help translate complex thought into clearer decisions.\nGoing forward, I want those systems to support not only analysis, but also communication, reflection, and collaboration."
+  },
+  {
+    "objectID": "index.html#secure-credential-management-recommendation",
+    "href": "index.html#secure-credential-management-recommendation",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Secure Credential Management Recommendation",
+    "text": "Secure Credential Management Recommendation\nSecure transmission\n\nUse Signal for direct encrypted delivery of temporary credentials\nEnable disappearing messages for one-time handoff\nRotate credentials after initial setup\n\nCredential vault\n\nStore long-term secrets in Bitwarden\nPrefer client-controlled vault access and role-based sharing\nSelf-hosting is viable when the client wants internal control\n\nRecommended workflow\n\nGenerate credential\nSend via Signal\nStore in Bitwarden\nRotate after delivery\n\nBenefit\nThis uses standard industry tools, reduces infrastructure complexity, and avoids building custom credential-delivery systems for MVP work."
+  },
+  {
+    "objectID": "index.html#requested-resolution",
+    "href": "index.html#requested-resolution",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Requested Resolution",
+    "text": "Requested Resolution\nRecommended outcome\n\nAcknowledge that the MVP work materially exceeded the original signed Phase 1 scope.\nSeparate the record into two buckets:\n\noriginal Phase 1 GPT-improvement work\nlater MVP implementation work\n\nTreat the MVP as a later-phase or additional-scope deliverable for compensation purposes.\nClose the engagement in a way that also accounts for the communication breakdown without erasing the completed work.\nUse the closeout as a clear endpoint rather than extending uncertainty.\n\nNext step\n\nReview the signed proposal, readout package, repo history, and Supabase production evidence together\nConfirm the scope boundary formally in writing\nAcknowledge that the delivery conflict was shaped by both security concern and communication breakdown\nAdopt a simple standard for future credential transmission and storage\nConvert the result into either:\n\ncompensation recognition for delivered additional scope, or\na formal Phase 2 / additional-scope agreement that incorporates the delivered MVP baseline\n\nIf the preferred outcome is a clean exit, settle the engagement on the basis of the completed work and documented scope expansion."
+  },
+  {
+    "objectID": "index.html#appendix-1",
+    "href": "index.html#appendix-1",
+    "title": "vTiger Support Copilot MVP Scope Review",
+    "section": "Appendix",
+    "text": "Appendix\nEvidence index\n\nSigned proposal PDF\nKickoff notes\nretail-manager-pr README and deliverables\n2026-01-22-owner-mvp-readout package\nvtiger-support-copilot-mvp README, package manifest, and commit history\nSupabase production table counts and schema inspection for project jtnkcgprfknekfgbdlyo\nCommunication-context statement reflecting the security-trigger explanation and self-assessment\nReassessment, workload, and communication-lessons statements derived from the full client-facing narrative\nScope-alignment lesson derived from the engagement’s MVP-versus-expansion mismatch\nPersonal philosophy statement explaining the self-engineering mindset behind the reflection\nCognitive-balance statement connecting analysis, perspective, and support systems\nFuture-state credential-sharing recommendation based on Signal and Bitwarden\n\n\nOpen Spatial Companion\n\nMissing evidence to attach next\n\nOptional: invoices or payment records if a monetary reconciliation appendix is later needed"
+  }
+]

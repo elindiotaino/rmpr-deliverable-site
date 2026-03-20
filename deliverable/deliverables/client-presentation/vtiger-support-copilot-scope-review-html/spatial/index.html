@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spatial Companion View</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="hud">
+      <div>
+        <div class="eyebrow">Spatial Companion</div>
+        <h1>Support Copilot Scope Review</h1>
+        <p>Use space or arrow keys to move across the map. Open a node to return to the linked slide path in the main deck.</p>
+      </div>
+      <div class="actions">
+        <a data-role="return-to-deck" href="../index.html#/1">Back to Main Deck</a>
+      </div>
+    </div>
+
+    <div class="viewport">
+      <div id="impress">
+      <div class="step panel intro" id="entry" data-x="0" data-y="0" data-scale="1.1">
+        <div class="label">Entry</div>
+        <h2>Main Paths</h2>
+        <p>This spatial view is a companion map. Horizontal chapters from the deck are clustered around the center.</p>
+        <a class="jump" data-node="entry" href="../index.html#/1">Return to opening</a>
+      </div>
+
+      <div class="step panel" id="opening" data-x="-1600" data-y="-300" data-scale="0.82">
+        <div class="label">Opening</div>
+        <h2>Opening</h2>
+        <p>Signed scope, top-line conclusion, and high-level framing.</p>
+        <a class="jump" data-node="opening" href="../index.html#/1">Open opening path</a>
+      </div>
+
+      <div class="step panel" id="scope-boundary" data-x="0" data-y="-1100" data-scale="0.82">
+        <div class="label">Scope Boundary</div>
+        <h2>Scope Boundary</h2>
+        <p>Agreement terms, what changed, and why the MVP falls outside the original baseline.</p>
+        <a class="jump" data-node="scope-boundary" href="../index.html#/2">Open scope path</a>
+      </div>
+
+      <div class="step panel" id="delivery-evidence" data-x="1600" data-y="-300" data-scale="0.82">
+        <div class="label">Delivery Evidence</div>
+        <h2>Delivery Evidence</h2>
+        <p>Work performed, deliverables, database scale, and implementation proof.</p>
+        <a class="jump" data-node="delivery-evidence" href="../index.html#/3">Open evidence path</a>
+      </div>
+
+      <div class="step panel wide" id="reflection" data-x="0" data-y="1100" data-scale="0.9">
+        <div class="label">Reflection</div>
+        <h2>Reflection Cluster</h2>
+        <p>Communication context, reassessment, workload lessons, philosophy, and cognitive balance.</p>
+        <a class="jump" data-node="reflection" href="../index.html#/4">Open reflection path</a>
+      </div>
+
+      <div class="step panel" id="recommendations" data-x="-1550" data-y="1850" data-scale="0.76" data-rotate="-8">
+        <div class="label">Recommendations</div>
+        <h2>Recommendations</h2>
+        <p>Credential management recommendations and practical future-state process improvements.</p>
+        <a class="jump" data-node="recommendations" href="../index.html#/5">Open recommendation path</a>
+      </div>
+
+      <div class="step panel" id="resolution" data-x="1550" data-y="1850" data-scale="0.76" data-rotate="8">
+        <div class="label">Resolution</div>
+        <h2>Resolution</h2>
+        <p>Requested resolution, next steps, and clean closeout framing.</p>
+        <a class="jump" data-node="resolution" href="../index.html#/5/1">Open resolution slide</a>
+      </div>
+
+      <div class="step panel" id="appendix" data-x="0" data-y="2550" data-scale="0.72">
+        <div class="label">Appendix</div>
+        <h2>Appendix</h2>
+        <p>Evidence index and reference trail for the full case record.</p>
+        <a class="jump" data-node="appendix" href="../index.html#/6">Open appendix path</a>
+      </div>
+      </div>
+    </div>
+
+    <script src="./impress-lite.js"></script>
+    <script src="./steps.js"></script>
+    <script>
+      window.PRESENTATION_SPATIAL_COMPANION = {
+        mapPath: "./nav-map.json",
+        revealPath: "../index.html"
+      };
+    </script>
+    <script src="./bridge.js"></script>
+  </body>
+  </html>

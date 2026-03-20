@@ -1,0 +1,35 @@
+{
+  "defaultRevealHash": "#/1",
+  "defaultSpatialNode": "opening",
+  "revealToSpatial": {
+    "#/1": "opening",
+    "#/1/1": "opening",
+    "#/2": "scope-boundary",
+    "#/2/1": "scope-boundary",
+    "#/2/2": "scope-boundary",
+    "#/2/3": "scope-boundary",
+    "#/3": "delivery-evidence",
+    "#/3/1": "delivery-evidence",
+    "#/3/2": "delivery-evidence",
+    "#/4": "reflection",
+    "#/4/1": "reflection",
+    "#/4/2": "reflection",
+    "#/4/3": "reflection",
+    "#/4/4": "reflection",
+    "#/4/5": "reflection",
+    "#/4/6": "reflection",
+    "#/5": "recommendations",
+    "#/5/1": "resolution",
+    "#/6": "appendix"
+  },
+  "spatialToReveal": {
+    "entry": "#/1",
+    "opening": "#/1",
+    "scope-boundary": "#/2",
+    "delivery-evidence": "#/3",
+    "reflection": "#/4",
+    "recommendations": "#/5",
+    "resolution": "#/5/1",
+    "appendix": "#/6"
+  }
+}

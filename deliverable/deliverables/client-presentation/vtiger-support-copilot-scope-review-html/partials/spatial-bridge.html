@@ -1,0 +1,221 @@
+<script>
+(function () {
+  var revealRoot = document.querySelector(".reveal");
+
+  if (!revealRoot) {
+    return;
+  }
+
+  function slideCoordinatesForId(slideId) {
+    var horizontalSlides = document.querySelectorAll(".reveal .slides > section");
+    var hIndex;
+
+    for (hIndex = 0; hIndex < horizontalSlides.length; hIndex += 1) {
+      var horizontal = horizontalSlides[hIndex];
+      var verticalSlides = horizontal.querySelectorAll(":scope > section");
+      var vIndex;
+
+      if (horizontal.id === slideId) {
+        return { h: hIndex, v: 0 };
+      }
+
+      for (vIndex = 0; vIndex < verticalSlides.length; vIndex += 1) {
+        if (verticalSlides[vIndex].id === slideId) {
+          return { h: hIndex, v: vIndex };
+        }
+      }
+    }
+
+    return null;
+  }
+
+  function normalizedIdFromHash(hash) {
+    if (!hash || hash.indexOf("#/") !== 0) {
+      return null;
+    }
+
+    var value = hash.slice(2);
+    if (!value || /^\d+(\/\d+)?$/.test(value)) {
+      return null;
+    }
+
+    return value.split("?")[0].split("&")[0];
+  }
+
+  function resolveNamedHash() {
+    var targetId = normalizedIdFromHash(window.location.hash);
+    var target;
+
+    if (!targetId || !window.Reveal || typeof window.Reveal.slide !== "function") {
+      return;
+    }
+
+    target = slideCoordinatesForId(targetId);
+
+    if (!target) {
+      return;
+    }
+
+    window.Reveal.slide(target.h, target.v);
+    history.replaceState(null, "", "#/" + target.h + "/" + target.v);
+  }
+
+  function refreshRevealLayout() {
+    if (!window.Reveal || typeof window.Reveal.layout !== "function") {
+      return;
+    }
+
+    window.requestAnimationFrame(function () {
+      window.Reveal.layout();
+    });
+
+    window.setTimeout(function () {
+      window.Reveal.layout();
+    }, 60);
+  }
+
+  function resetViewportScroll() {
+    var viewport = document.querySelector(".reveal-viewport");
+
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    if (viewport) {
+      viewport.scrollTop = 0;
+      viewport.scrollLeft = 0;
+    }
+  }
+
+  var config = window.PRESENTATION_SPATIAL_BRIDGE || {
+    mapPath: "./spatial/nav-map.json",
+    spatialPath: "./spatial/index.html",
+    controlLabel: "Open 3D View",
+  };
+
+  function normalizeHash(hash, fallback) {
+    if (!hash || hash === "#") {
+      return fallback || "#/1";
+    }
+
+    if (hash.indexOf("#/") === 0) {
+      return hash;
+    }
+
+    if (hash.charAt(0) === "#") {
+      return "#/" + hash.slice(1);
+    }
+
+    return "#/" + hash.replace(/^\/+/, "");
+  }
+
+  function fallbackHashes(hash) {
+    var normalized = normalizeHash(hash);
+    var candidates = [];
+    var seen = {};
+    var parts = normalized.slice(2).split("/").filter(Boolean);
+
+    function add(candidate) {
+      if (!candidate || seen[candidate]) {
+        return;
+      }
+
+      seen[candidate] = true;
+      candidates.push(candidate);
+    }
+
+    add(normalized);
+
+    while (parts.length > 1) {
+      parts.pop();
+      add("#/" + parts.join("/"));
+    }
+
+    if (parts.length === 1) {
+      add("#/" + parts[0]);
+    }
+
+    return candidates;
+  }
+
+  function resolveSpatialNode(map, hash, preferredNode) {
+    if (preferredNode && map.spatialToReveal && map.spatialToReveal[preferredNode]) {
+      return preferredNode;
+    }
+
+    return (
+      fallbackHashes(hash)
+        .map(function (candidate) {
+          return map.revealToSpatial && map.revealToSpatial[candidate];
+        })
+        .filter(Boolean)[0] || map.defaultSpatialNode
+    );
+  }
+
+  function buildSpatialUrl(map, node, hash) {
+    var url = new URL(config.spatialPath, window.location.href);
+    url.searchParams.set("node", node);
+    url.searchParams.set("slide", normalizeHash(hash, map.defaultRevealHash));
+    return url.toString();
+  }
+
+  function injectControl() {
+    var control = document.createElement("a");
+    control.className = "spatial-floating-link";
+    control.href = config.spatialPath;
+    control.textContent = config.controlLabel;
+    control.setAttribute("aria-label", config.controlLabel);
+    document.body.appendChild(control);
+    return control;
+  }
+
+  function init(map) {
+    var control = injectControl();
+
+    function updateLinks() {
+      resolveNamedHash();
+      resetViewportScroll();
+      refreshRevealLayout();
+      var hash = normalizeHash(window.location.hash, map.defaultRevealHash);
+      var node = resolveSpatialNode(map, hash);
+
+      control.href = buildSpatialUrl(map, node, hash);
+
+      Array.prototype.forEach.call(document.querySelectorAll("a.spatial-link"), function (link) {
+        var overrideNode = link.getAttribute("data-spatial-node");
+        var resolvedNode = resolveSpatialNode(map, hash, overrideNode);
+        link.href = buildSpatialUrl(map, resolvedNode, hash);
+      });
+    }
+
+    updateLinks();
+    window.addEventListener("hashchange", updateLinks);
+
+    if (window.Reveal && typeof window.Reveal.on === "function") {
+      resolveNamedHash();
+      resetViewportScroll();
+      refreshRevealLayout();
+      window.Reveal.on("slidechanged", updateLinks);
+      window.Reveal.on("ready", function () {
+        resolveNamedHash();
+        resetViewportScroll();
+        refreshRevealLayout();
+        updateLinks();
+      });
+    }
+  }
+
+  fetch(config.mapPath)
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error("navigation map not available");
+      }
+
+      return response.json();
+    })
+    .then(init)
+    .catch(function () {
+      return null;
+    });
+})();
+</script>
