@@ -12,7 +12,7 @@
   <title>presentation-vtiger-support-copilot-mvp-scope-review – vTiger Support Copilot MVP Scope Review</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
   <style>
@@ -118,6 +118,168 @@
       display: block;
       margin-left: auto;
       margin-right: 0; 
+    }
+  </style>
+  <style>
+    .mobile-touch-nav {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .reveal .slides {
+        text-align: left;
+      }
+
+      .reveal .slides section {
+        padding: 0.2rem 0.35rem 4.8rem 0.35rem;
+      }
+
+      .reveal h1 {
+        font-size: 2.35em;
+        line-height: 1.05;
+      }
+
+      .reveal h2 {
+        font-size: 1.8em;
+        line-height: 1.08;
+      }
+
+      .reveal h3 {
+        font-size: 1.18em;
+        line-height: 1.18;
+        letter-spacing: 0.06em;
+      }
+
+      .reveal p,
+      .reveal li,
+      .reveal blockquote,
+      .reveal table,
+      .reveal td,
+      .reveal th {
+        font-size: 1.16em;
+        line-height: 1.42;
+      }
+
+      .reveal li {
+        margin-bottom: 0.55rem;
+      }
+
+      .reveal code {
+        font-size: 0.98em;
+      }
+
+      .reveal .slide-number {
+        right: 14px !important;
+        bottom: 14px !important;
+        font-size: 0.98em !important;
+        padding: 0.45rem 0.75rem;
+      }
+
+      .reveal .footer {
+        left: 14px !important;
+        bottom: 14px !important;
+        max-width: 60vw;
+        font-size: 0.92em !important;
+      }
+
+      .reveal .controls {
+        transform: scale(1.4);
+        transform-origin: bottom right;
+        right: 14px !important;
+        bottom: 58px !important;
+      }
+
+      .reveal .progress {
+        height: 6px;
+      }
+
+      .mobile-touch-nav {
+        display: block;
+      }
+
+      .mobile-touch-nav button {
+        position: fixed;
+        z-index: 45;
+        border: 0;
+        background: transparent;
+        color: rgba(15, 46, 40, 0.86);
+        font: inherit;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .mobile-touch-nav button::after {
+        position: absolute;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(15, 46, 40, 0.58);
+      }
+
+      .mobile-touch-nav .touch-left,
+      .mobile-touch-nav .touch-right {
+        top: 16vh;
+        bottom: 16vh;
+        width: 22vw;
+      }
+
+      .mobile-touch-nav .touch-left {
+        left: 0;
+        background: linear-gradient(90deg, rgba(12, 92, 76, 0.12), rgba(12, 92, 76, 0));
+      }
+
+      .mobile-touch-nav .touch-left::after {
+        content: "Previous";
+        left: 0.8rem;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+        transform-origin: left center;
+      }
+
+      .mobile-touch-nav .touch-right {
+        right: 0;
+        background: linear-gradient(270deg, rgba(12, 92, 76, 0.12), rgba(12, 92, 76, 0));
+      }
+
+      .mobile-touch-nav .touch-right::after {
+        content: "Next";
+        right: 0.8rem;
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg);
+        transform-origin: right center;
+      }
+
+      .mobile-touch-nav .touch-top,
+      .mobile-touch-nav .touch-bottom {
+        left: 22vw;
+        right: 22vw;
+        height: 16vh;
+      }
+
+      .mobile-touch-nav .touch-top {
+        top: 0;
+        background: linear-gradient(180deg, rgba(209, 139, 63, 0.12), rgba(209, 139, 63, 0));
+      }
+
+      .mobile-touch-nav .touch-top::after {
+        content: "Up";
+        top: 0.75rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .mobile-touch-nav .touch-bottom {
+        bottom: 0;
+        background: linear-gradient(0deg, rgba(209, 139, 63, 0.12), rgba(209, 139, 63, 0));
+      }
+
+      .mobile-touch-nav .touch-bottom::after {
+        content: "Down";
+        bottom: 0.9rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   </style>
 </head>
@@ -567,6 +729,12 @@
 
 </section></section>
     </div>
+  <div class="mobile-touch-nav" aria-hidden="true">
+<button class="touch-left" type="button" data-nav-direction="left" tabindex="-1"></button>
+<button class="touch-right" type="button" data-nav-direction="right" tabindex="-1"></button>
+<button class="touch-top" type="button" data-nav-direction="up" tabindex="-1"></button>
+<button class="touch-bottom" type="button" data-nav-direction="down" tabindex="-1"></button>
+</div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
 <p>vtiger support copilot scope review</p>
@@ -780,6 +948,65 @@
           RevealZoom
         ]
       });
+    </script>
+    <script>
+    (function () {
+      function isMobileViewport() {
+        return window.matchMedia("(max-width: 768px)").matches;
+      }
+
+      function navigate(direction) {
+        if (!window.Reveal) {
+          return;
+        }
+
+        if (direction === "left") {
+          window.Reveal.left();
+          return;
+        }
+
+        if (direction === "right") {
+          window.Reveal.right();
+          return;
+        }
+
+        if (direction === "up") {
+          window.Reveal.up();
+          return;
+        }
+
+        if (direction === "down") {
+          window.Reveal.down();
+        }
+      }
+
+      function bindTouchZones() {
+        var zones = document.querySelectorAll(".mobile-touch-nav [data-nav-direction]");
+
+        zones.forEach(function (zone) {
+          zone.addEventListener("click", function (event) {
+            var interactive = event.target.closest("a, button, input, textarea, select, summary");
+
+            if (interactive && interactive !== zone) {
+              return;
+            }
+
+            if (!isMobileViewport()) {
+              return;
+            }
+
+            event.preventDefault();
+            navigate(zone.getAttribute("data-nav-direction"));
+          });
+        });
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", bindTouchZones);
+      } else {
+        bindTouchZones();
+      }
+    })();
     </script>
     <script>
     (function () {
